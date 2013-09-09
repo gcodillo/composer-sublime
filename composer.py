@@ -304,7 +304,7 @@ class BaseComposerCommand(sublime_plugin.TextCommand):
     def go(self, binary, command, args):
         self.binary = binary
         self.command = command
-        self.args =args
+        self.args = args if args is not None else []
 
         outputWindow = self.getOutputWindow()
         outputWindow.write("-- Starting Composer --\n")
